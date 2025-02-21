@@ -1,0 +1,26 @@
+{
+  "name": "urlshortner",
+  "version": "1.0.0",
+  "description": "URL Shortner - IHK Prüfungsaufgaben",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DJMahirNationTV/projekt_arbeit_ihk_pr-fungsaufgaben_fiae.git"
+  },
+  "author": "Mahir Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DJMahirNationTV/projekt_arbeit_ihk_pr-fungsaufgaben_fiae/issues"
+  },
+  "homepage": "https://github.com/DJMahirNationTV/projekt_arbeit_ihk_pr-fungsaufgaben_fiae#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mysql": "^2.18.1",
+    "nanoid": "^5.1.0"
+  }
+}
