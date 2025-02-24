@@ -52,9 +52,10 @@
                         const shortUrl = row.insertCell(1);
                         const deleteBtn = row.insertCell(2);
                         const fullshortlink = "http://localhost:3000/" + url.short_id;
-                        originalUrl.textContent = url.long_url;
+                        const fulllink = url.long_url;
+                        originalUrl.innerHTML = `<span title="${fulllink}">${fulllink}</span>`;
                         shortUrl.innerHTML = `<a href="${fullshortlink}" target="_blank" class="shortlink">${fullshortlink}</a>`;
-                        deleteBtn.innerHTML = `<button class="btn btn-danger" onclick="deleteUrl('${url.short_id}')"><i class="bi bi-trash"></i></button>`;
+                        deleteBtn.innerHTML = `<button class="btn btn-danger deleteUrl" onclick="deleteUrl('${url.short_id}')"><i class="bi bi-trash"></i></button>`;
                     });
                 });
         }

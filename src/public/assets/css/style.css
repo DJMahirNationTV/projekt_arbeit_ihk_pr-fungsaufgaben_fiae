@@ -103,6 +103,18 @@ body {
 }
 
 /* Nur den Delete Button */
+.table td:first-child {
+   max-width: 300px;
+   width: auto;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+}
+
+.table td:nth-child(2) {
+   text-align: center;
+}
+
 .table td:last-child {
    text-align: center;
 }
@@ -121,4 +133,12 @@ body {
 .shortlink:hover {
    background: rgba(33, 11, 54, 0.685);
    color: rgb(113, 129, 197);
+}
+.deleteUrl {
+   text-decoration-line: none;
+   transition: all 0.1s ease;
+}
+.deleteUrl:hover {
+   background: #211e75;
+   color: whitesmoke;
 }
