@@ -1,18 +1,15 @@
 module.exports = (app, db) => {
-   app.post("/api/urls", async (req, res) => {
-      const { longUrl } = req.body;
-      if (!longUrl || !longUrl.match(/^(http|https):\/\//)) {
-        return res.status(400).json({ error: "Invalid URL format!" });
-      }
-   
-      const { nanoid } = await import("nanoid");
-      const shortId = nanoid(6);
-      const sql = "SELECT short_id, long_url FROM urls";
+  app.get("/api/urls", async (req, res) => {
+    // SQL-Abfrage
+    const sql = "SELECT short_id, long_url FROM urls";
     
-      db.query(sql, [shortId, longUrl], (err) => {
-        if (err) {
-          return res.status(500).json({ error: "Database error" });
-        }
-      });
+    // Führt die SQL-Abfrage aus
+    db.query(sql, (err, results) => {
+      if (err) {
+        console.error("Database error:", err);
+        return res.status(500).json({ error: "Database error" });
+      }
+      res.json(results); // Versendet die Ergebnisse als JSON
     });
+  });
 };

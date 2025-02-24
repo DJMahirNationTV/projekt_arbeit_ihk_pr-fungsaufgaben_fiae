@@ -98,4 +98,27 @@ body {
 .table td {
    padding: 0.5rem;
    border-bottom: 1px solid #4a47a3;
+   text-align: left;
+   font-size: 1rem;
+}
+
+/* Nur den Delete Button */
+.table td:last-child {
+   text-align: center;
+}
+
+.shortlink {
+   padding: 0.5rem 1rem;
+   border-radius: 15px;
+   text-align: center;
+   font-size: 1.1rem;
+   background: rgba(73, 22, 122, 0.562);
+   color: whitesmoke;
+   text-decoration-line: none;
+   transition: all 0.1s ease;
+}
+
+.shortlink:hover {
+   background: rgba(33, 11, 54, 0.685);
+   color: rgb(113, 129, 197);
 }

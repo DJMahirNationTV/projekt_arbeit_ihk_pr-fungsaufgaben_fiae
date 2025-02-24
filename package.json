@@ -21,6 +21,7 @@
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "mysql": "^2.18.1",
-    "nanoid": "^5.1.0"
+    "nanoid": "^5.1.0",
+    "urlshortner": "file:"
   }
 }
