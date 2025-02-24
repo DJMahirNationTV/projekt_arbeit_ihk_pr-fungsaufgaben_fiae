@@ -1,13 +1,12 @@
 const express = require("express");
 const mysql = require("mysql");
-const cors = require("cors");
 const path = require("path");
 require("dotenv").config();
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "public")));
 
 // Datenbankverbindung | Quelle: https://www.npmjs.com/package/mysql
 const db = mysql.createConnection({
