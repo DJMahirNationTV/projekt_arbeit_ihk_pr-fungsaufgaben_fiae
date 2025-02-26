@@ -1,7 +1,7 @@
 module.exports = (app, db) => {
   app.get("/api/urls", async (req, res) => {
     // SQL-Abfrage
-    const sql = "SELECT short_id, long_url FROM urls";
+    const sql = "SELECT short_id, long_url, created_at FROM urls";
     
     // Führt die SQL-Abfrage aus
     db.query(sql, (err, results) => {

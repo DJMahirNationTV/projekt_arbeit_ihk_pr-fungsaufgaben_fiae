@@ -8,6 +8,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
+
 // Datenbankverbindung | Quelle: https://www.npmjs.com/package/mysql
 const db = mysql.createPool({ // Erstellt einen Pool für mehrere gleichzeitige Datenbankverbindungen
   host: process.env.HOST,
@@ -29,16 +30,20 @@ db.getConnection((err) => {
 });
 
 // https://expressjs.com/en/starter/static-files.html
+// Es wird die index.html Datei aus dem public Ordner geladen und angezeigt.
+// der "/" ist der Pfad der aufgerufen wird. Also http://localhost:3000/
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-
-require("./modules/create")(app, db);
-require("./modules/list")(app, db);
-require("./modules/delete")(app, db);
+// Importiert alle Module aus dem modules Ordner und übergibt die app und db Variablen
+// Die app und db Variablen werden in den Modulen verwendet, um Routen zu definieren und Datenbankabfragen auszuführen.
+require("./modules/create")(app, db); // Erstellt eine neue URL in der Datenbank
+require("./modules/list")(app, db); // Listet alle URLs aus der Datenbank
+require("./modules/delete")(app, db); // Löscht eine URL aus der Datenbank
 require("./modules/redirection")(app, db); // Leitet weiter von der Kurz URL auf die Lang URL
 
-app.listen(3000, () => {
+// Startet den Server auf Port 3000 und gibt eine Meldung aus, dass der Server gestartet wurde.
+app.listen(3000, () => { 
   console.log(`Example app listening on port 3000\nhttp://localhost:3000`);
 });

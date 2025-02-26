@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
     <script src="/assets/js/function.js" defer></script>
 </head>
+
 <body>
     <header class="header">
         <a href="/">
@@ -24,16 +26,26 @@
         <h2>Liste</h2>
         <div class="container">
             <table class="table">
-                <tr>
-                    <th>Original URL</th>
-                    <th>Short URL</th>
-                    <th>Delete</th>
-                </tr>
-                <tr>
-                    <td id="originalUrl"></td>
-                    <td id="shortUrl"></td>
-                    <td id="deleteBtn"></td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>Original URL</th>
+                        <th>Short URL</th>
+                        <th>Created</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <!-- 
+                            Durch die IDs ersetzt JavaScript die Contents,
+                            die vom Server abgefragt werden.
+                        -->
+                        <td id="originalUrl"></td>
+                        <td id="shortUrl"></td>
+                        <td id="created"></td>
+                        <td id="deleteBtn"></td>
+                    </tr>
+                </tbody>
             </table>
         </div>
     </section>
@@ -44,17 +56,19 @@
                 .then(data => {
                     const table = document.querySelector('.table');
                     while (table.rows.length > 1) {
-                            table.deleteRow(1);
+                        table.deleteRow(1);
                     }
                     data.forEach(url => {
-                        const row = table.insertRow(-1);
-                        const originalUrl = row.insertCell(0);
+                        const row = table.insertRow(-1); // fügt eine neue Zeile in die Tabelle ein
+                        const originalUrl = row.insertCell(0); // setzt die Originale URL auf die erste Spalte
                         const shortUrl = row.insertCell(1);
-                        const deleteBtn = row.insertCell(2);
+                        const created = row.insertCell(2);
+                        const deleteBtn = row.insertCell(3);
                         const fullshortlink = "http://localhost:3000/" + url.short_id;
                         const fulllink = url.long_url;
                         originalUrl.innerHTML = `<span title="${fulllink}">${fulllink}</span>`;
                         shortUrl.innerHTML = `<a href="${fullshortlink}" target="_blank" class="shortlink">${fullshortlink}</a>`;
+                        created.innerHTML = new Date(url.created_at).toLocaleString();
                         deleteBtn.innerHTML = `<button class="btn btn-danger deleteUrl" onclick="deleteUrl('${url.short_id}')"><i class="bi bi-trash"></i></button>`;
                     });
                 });
@@ -62,14 +76,16 @@
 
         async function deleteUrl(shortId) {
             try {
+                // Versendet eine DELETE-Anfrage an den Server
                 const response = await fetch(`/api/urls/${shortId}`, {
                     method: 'DELETE'
                 });
-                
+
                 if (response.ok) {
                     // Reload the URLs after successful deletion
                     loadUrls();
                 } else {
+                    // Bekommt den Fehler aus dem Server (via response) und dann poppt ein Alert auf mit dem Fehler.
                     const data = await response.json();
                     alert(data.error || 'Error deleting URL');
                 }
@@ -82,4 +98,5 @@
     </script>
     <script src="./assets/js/deleteBtn.js"></script>
 </body>
+
 </html>
