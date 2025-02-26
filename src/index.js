@@ -40,5 +40,5 @@ require("./modules/delete")(app, db);
 require("./modules/redirection")(app, db); // Leitet weiter von der Kurz URL auf die Lang URL
 
 app.listen(3000, () => {
-  console.log(`Example app listening on port 3000`);
+  console.log(`Example app listening on port 3000\nhttp://localhost:3000`);
 });
