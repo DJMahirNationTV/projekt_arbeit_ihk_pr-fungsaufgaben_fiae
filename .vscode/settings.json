@@ -1,5 +1,6 @@
 {
    "git.ignoreLimitWarning": true,
-   "vscord.enabled": true,
-   "git.enabled": true
+   "vscord.enabled": false,
+   "git.enabled": true,
+   "discord.enabled": true
 }
