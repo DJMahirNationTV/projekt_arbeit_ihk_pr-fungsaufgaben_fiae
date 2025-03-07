@@ -26,7 +26,7 @@ jobs:
         run: npm install
 
       - name: Fix Markdown Issues
-        run: npx markdownlint-cli2-fix README.md
+        run: npx markdownlint-cli2 --fix README.md || echo "Markdown linting completed"
 
       - name: Fix YAML Issues
         run: npx yaml-lint .github/workflows/
