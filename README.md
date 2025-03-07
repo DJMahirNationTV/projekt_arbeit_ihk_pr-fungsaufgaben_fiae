@@ -14,6 +14,17 @@ rename `.env.example` to `.env`
 
 Enter your Database details in the `.env` file, so process can be started.
 
+Database Structure:
+
+```sql
+CREATE TABLE urls (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    short_code VARCHAR(10) UNIQUE NOT NULL,
+    original_url TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
+
 and lastly run:
 
 ```js
