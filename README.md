@@ -5,7 +5,8 @@ Projekt Dokumentation - IHK - Prüfungsarbeit inkl. Präsi. - URL Shortner
 \
 \
 Install all Packages:
-```
+
+```js
 npm i
 ```
 
@@ -15,7 +16,7 @@ Enter your Database details in the `.env` file, so process can be started.
 
 and lastly run:
 
-```
+```js
 npm start
 ```
 

@@ -1,3 +1,4 @@
+---
 name: "Code Quality Check"
 
 on: 
@@ -24,8 +25,17 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
+      - name: Fix Markdown Issues
+        run: npx markdownlint-cli2-fix README.md
+
+      - name: Fix YAML Issues
+        run: npx yaml-lint .github/workflows/
+
+      - name: Fix HTML Issues
+        run: npx htmlhint src/public/
+
       - name: Run ESLint (Code-Qualitätsprüfung)
-        run: npx eslint . --ext .js,.ts || echo "ESLint found issues"
+        run: npx eslint src/ --fix || echo "ESLint found issues"
 
       - name: Auto-Fix Formatting with Prettier
         run: npx prettier --write .
@@ -37,4 +47,4 @@ jobs:
         uses: github/super-linter@v4
         env:
           VALIDATE_JAVASCRIPT: true
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.SECRET_TOKEN }}
