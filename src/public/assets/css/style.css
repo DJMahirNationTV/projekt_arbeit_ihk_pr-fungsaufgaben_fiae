@@ -1,185 +1,184 @@
 /* ===== RESET ===== */
 body {
-   margin: 0;
-   padding: 0;
-   font-family: 'Roboto', sans-serif;
-   background: linear-gradient(62deg, rgb(5, 0, 82) 0%, rgb(0, 8, 54) 100%);   
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(62deg, rgb(5, 0, 82) 0%, rgb(0, 8, 54) 100%);
 }
 
 /* ===== HEADER ===== */
 
 .header {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   padding: 0.5rem 1rem;
-   background: #4a47a3;
-   color: whitesmoke;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: #4a47a3;
+  color: whitesmoke;
 }
 .header img {
-   width: 50px;
-   height: 50px;
-   border-radius: 20%;
+  width: 50px;
+  height: 50px;
+  border-radius: 20%;
 }
 
 .header h1 {
-   font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 /* ===== NAV ===== */
 
 .nav {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   padding: 0 1rem;
-   background: #4a47a3;
-   color: whitesmoke;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  background: #4a47a3;
+  color: whitesmoke;
 }
 .nav a {
-   color: whitesmoke;
-   text-decoration: none;
-   font-size: 1.2rem;
+  color: whitesmoke;
+  text-decoration: none;
+  font-size: 1.2rem;
 }
 
 .nav ul li {
-   list-style: none;
-   display: inline;
-   margin: 0 1rem;
+  list-style: none;
+  display: inline;
+  margin: 0 1rem;
 }
 
 .nav ul {
-   display: flex;
+  display: flex;
 }
-
 
 /* ===== SECTION ===== */
 
 .section {
-   display: block;
-   max-width: 50%;
-   margin: 0 auto;
-   margin-top: 5rem;
-   margin-bottom: 2rem;
-   padding: 0.5rem 1rem;
-   border-radius: 15px;
-   text-align: center;
-   font-size: 1.1rem;
-   background: rgba(73, 22, 122, 0.562);
-   color: whitesmoke;
-   transition: all 0.3s ease;
+  display: block;
+  max-width: 50%;
+  margin: 0 auto;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 1.1rem;
+  background: rgba(73, 22, 122, 0.562);
+  color: whitesmoke;
+  transition: all 0.3s ease;
 }
 
 /* ===== CONTAINER ===== */
 
 .container {
-   display: block;
-   color: whitesmoke;
-   overflow-x: auto;
+  display: block;
+  color: whitesmoke;
+  overflow-x: auto;
 }
 
 .container::-webkit-scrollbar {
-   width: 5px;
-   height: 5px;
+  width: 5px;
+  height: 5px;
 }
 
 .container::-webkit-scrollbar-thumb {
-   background: #4a47a3;
-   border-radius: 5px;
+  background: #4a47a3;
+  border-radius: 5px;
 }
 
 .container::-webkit-scrollbar-track {
-   background: #211e75;   
+  background: #211e75;
 }
 
 .container input {
-   max-width: 100%;
-   padding: 0.5rem;
-   margin: 0.5rem 0;
-   border-radius: 5px;
-   border: none;
-   font-size: 1rem;
+  max-width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
 }
 .container button {
-   padding: 0.5rem 1rem;
-   margin: 0.5rem 0;
-   border-radius: 5px;
-   border: none;
-   background: #4a47a3;
-   color: whitesmoke;
-   cursor: pointer;
-   font-size: 1rem;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0;
+  border-radius: 5px;
+  border: none;
+  background: #4a47a3;
+  color: whitesmoke;
+  cursor: pointer;
+  font-size: 1rem;
 }
 
 /* ===== TABLE ===== */
 
 .table {
-   margin-top: 1rem;
-   border-collapse: collapse;
-   width: 100%;
+  margin-top: 1rem;
+  border-collapse: collapse;
+  width: 100%;
 }
 .table th {
-   background: #4a47a3;
-   color: whitesmoke;
-   padding: 0.5rem;
+  background: #4a47a3;
+  color: whitesmoke;
+  padding: 0.5rem;
 }
 .table td {
-   padding: 0.5rem;
-   border-bottom: 1px solid #4a47a3;
-   text-align: left;
-   font-size: 1rem;
-   transition: all 0.3s ease;
+  padding: 0.5rem;
+  border-bottom: 1px solid #4a47a3;
+  text-align: left;
+  font-size: 1rem;
+  transition: all 0.3s ease;
 }
 
 /* Nur den Delete Button */
 .table td:first-child {
-   max-width: 300px;
-   width: auto;
-   white-space: nowrap;
-   overflow: hidden;
-   text-overflow: ellipsis;
+  max-width: 300px;
+  width: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .table td:nth-child(2) {
-   text-align: center;
+  text-align: center;
 }
 
 .table td:last-child {
-   text-align: center;
+  text-align: center;
 }
 
 /* ===== OUTPUT ===== */
 
 .output {
-   margin-top: 1rem;
-   padding: 0.5rem;
-   border-radius: 5px;
-   background: rgba(0, 0, 0, 0.5);
-   color: whitesmoke;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.5);
+  color: whitesmoke;
 }
 
 /* ===== BUTTON ===== */
 
 .shortlink {
-   padding: 0.5rem 1rem;
-   border-radius: 15px;
-   text-align: center;
-   font-size: 1.1rem;
-   background: rgba(73, 22, 122, 0.562);
-   color: whitesmoke;
-   text-decoration-line: none;
-   transition: all 0.1s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 1.1rem;
+  background: rgba(73, 22, 122, 0.562);
+  color: whitesmoke;
+  text-decoration-line: none;
+  transition: all 0.1s ease;
 }
 
 .shortlink:hover {
-   background: rgba(33, 11, 54, 0.685);
-   color: rgb(113, 129, 197);
+  background: rgba(33, 11, 54, 0.685);
+  color: rgb(113, 129, 197);
 }
 .deleteUrl {
-   text-decoration-line: none;
-   transition: all 0.1s ease;
+  text-decoration-line: none;
+  transition: all 0.1s ease;
 }
 .deleteUrl:hover {
-   background: #211e75;
-   color: whitesmoke;
+  background: #211e75;
+  color: whitesmoke;
 }

@@ -10,13 +10,14 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // TESTING
 // Datenbankverbindung | Quelle: https://www.npmjs.com/package/mysql
-const db = mysql.createPool({ // Erstellt einen Pool für mehrere gleichzeitige Datenbankverbindungen
+const db = mysql.createPool({
+  // Erstellt einen Pool für mehrere gleichzeitige Datenbankverbindungen
   host: process.env.HOST,
   user: process.env.USER,
   password: process.env.PASS,
   database: process.env.DB,
   connectionLimit: 10, // Maximal 10 gleichzeitige Verbindungen
-  waitForConnections: true // Wartet, wenn alle Verbindungen belegt sind
+  waitForConnections: true, // Wartet, wenn alle Verbindungen belegt sind
 });
 // Wenn die Verbindung zur Datenbank fehlschlägt, wird eine Fehlermeldung ausgegeben.
 db.getConnection((err) => {
@@ -44,6 +45,6 @@ require("./modules/delete")(app, db); // Löscht eine URL aus der Datenbank
 require("./modules/redirection")(app, db); // Leitet weiter von der Kurz URL auf die Lang URL
 
 // Startet den Server auf Port 3000 und gibt eine Meldung aus, dass der Server gestartet wurde.
-app.listen(3000, () => { 
-  console.log(`Example app listening on port 3000\nhttp://localhost:3000`);
+app.listen(3000, () => {
+  console.log("Example app listening on port 3000\nhttp://localhost:3000");
 });
