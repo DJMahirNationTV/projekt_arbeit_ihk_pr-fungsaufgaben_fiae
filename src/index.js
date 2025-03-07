@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
-
+// TESTING
 // Datenbankverbindung | Quelle: https://www.npmjs.com/package/mysql
 const db = mysql.createPool({ // Erstellt einen Pool für mehrere gleichzeitige Datenbankverbindungen
   host: process.env.HOST,
