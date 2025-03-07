@@ -1,29 +1,23 @@
-name: "Node.js Vulnerability Scan"
+name: "Node.js Vulnerabilities"
 
 on: 
   schedule:
-    - cron: "0 0 * * *" # Täglich um Mitternacht prüfen
+    - cron: "0 0 * * *"  # Läuft täglich um Mitternacht
   push:
     branches:
-      - main
+      - main  # Läuft auch bei einem Push zur main-Branch
   pull_request:
     branches:
-      - main
+      - main  # Überprüft ebenfalls bei PRs zur main-Branch
 
 jobs:
-  check-node-vulnerabilities:
+  is-my-node-vulnerable:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
-      
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+
+      - name: Check Node.js Vulnerabilities
+        uses: nodejs/is-my-node-vulnerable@v1
         with:
           node-version: "lts/*"
-
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Run Vulnerability Scan
-        uses: nodesource/nsecure-action@v2
