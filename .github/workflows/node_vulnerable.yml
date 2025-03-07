@@ -20,4 +20,4 @@ jobs:
       - name: Check Node.js Vulnerabilities
         uses: nodejs/is-my-node-vulnerable@v1.6.1
         with:
-          node-version: "18.14.1"
+          node-version: "23.7.0"
