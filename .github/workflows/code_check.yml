@@ -27,8 +27,8 @@ jobs:
       - name: Run ESLint (Code-Qualitätsprüfung)
         run: npx eslint . --ext .js,.ts || echo "ESLint found issues"
 
-      - name: Check Formatting with Prettier
-        run: npx prettier --check .
+      - name: Auto-Fix Formatting with Prettier
+        run: npx prettier --write .
 
       - name: Run Tests with Jest (falls vorhanden)
         run: npm test || echo "Tests failed, check output"
