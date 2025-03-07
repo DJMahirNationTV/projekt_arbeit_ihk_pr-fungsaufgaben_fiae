@@ -5,10 +5,10 @@ on:
     - cron: "0 0 * * *"  # Läuft täglich um Mitternacht
   push:
     branches:
-      - main  # Läuft auch bei einem Push zur main-Branch
+      - main
   pull_request:
     branches:
-      - main  # Überprüft ebenfalls bei PRs zur main-Branch
+      - main
 
 jobs:
   is-my-node-vulnerable:
@@ -20,4 +20,4 @@ jobs:
       - name: Check Node.js Vulnerabilities
         uses: nodejs/is-my-node-vulnerable@v1
         with:
-          node-version: "lts/*"
+          node-version: "18.14.1"
