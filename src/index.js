@@ -17,7 +17,7 @@ const db = mysql.createPool({
   password: process.env.PASS,
   database: process.env.DB,
   connectionLimit: 10, // Maximal 10 gleichzeitige Verbindungen
-  waitForConnections: true, // Wartet, wenn alle Verbindungen belegt sind
+  waitForConnections: true, // Wartet, wenn alle Verbindungen belegt sind, anstatt sofort einen Fehler zu werfen
 });
 // Wenn die Verbindung zur Datenbank fehlschlägt, wird eine Fehlermeldung ausgegeben.
 db.getConnection((err) => {
