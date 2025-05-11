@@ -19,8 +19,8 @@ Database Structure:
 ```sql
 CREATE TABLE urls (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    short_code VARCHAR(10) UNIQUE NOT NULL,
-    original_url TEXT NOT NULL,
+    short_id VARCHAR(10) UNIQUE NOT NULL,
+    long_url TEXT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 ```
